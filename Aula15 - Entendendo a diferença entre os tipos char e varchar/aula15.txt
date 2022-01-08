@@ -1,0 +1,14 @@
+// Entendendo a diferença entre os tipos char e varchar
+
+char com 10 posições
+  J O R G E
+  - - - - - - - - - - Tamanho FIXO em disco
+  - - - - - - - - - -  
+  10 bytes
+
+varchar com 10 posiçoes
+  J O R G E
+  - - - - -           Tamanho VARIÁVEL em disco
+  - - - - - - - - - - 
+  5 bytes
+  
