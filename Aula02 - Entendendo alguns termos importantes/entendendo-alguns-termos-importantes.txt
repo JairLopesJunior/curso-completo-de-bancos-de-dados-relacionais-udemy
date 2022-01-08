@@ -1,0 +1,13 @@
+Entendendo alguns termos importantes:
+
+- Administrador de Dados (AD)
+
+- Administrador de Banco de Dados (DBA)
+
+- business intelligence ou Inteligencia de Negocios (BI)
+
+- Big Data
+
+- Data Mining (Mineração de Dados)
+
+- Data Science (Ciencia de Dados)
