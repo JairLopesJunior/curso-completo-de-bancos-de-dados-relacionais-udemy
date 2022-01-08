@@ -1,0 +1,7 @@
+// Criando e removendo banco de dados
+
+SQL
+ - Conjunto DDL (Data Definition Language)
+
+   - CREATE DATABASE nome_do_banco;
+   - DROP DATABASE nome_do_banco;
