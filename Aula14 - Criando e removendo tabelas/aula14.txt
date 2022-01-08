@@ -1,0 +1,8 @@
+// Criando e removendo tabelas
+
+SQL
+  - Conjunto DDL (Data Definition language)
+
+    - CREATE TABLE nome_da_tabela;
+    - DROP TABLE nome_da_tabela;
+
