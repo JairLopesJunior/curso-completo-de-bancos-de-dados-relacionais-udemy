@@ -1,0 +1,25 @@
+// Insert - Inserindo registros em tabelas
+
+SQL
+  - Conjunto DDL (Data Definition Language)
+    - CREATE, DROP
+
+  - Conjunto DML (Data Manipulation Language)
+    - INSERT, UPDATE, DELETE
+
+  - Conjunto DQL (Data Query Language)
+    - SELECT
+
+
+// INSERT
+INSERT INTO tabela(... colunas ...) VALUES(... valores ...)
+obs: As Ordens das colunas não importa se os valores estiverem na mesma Ordem.
+
+Ex passando as colunas: 
+INSERT INTO aluno(
+	sexo, idade, data_inscricao_curso, telefone, valor_pago_curso,
+    ativo_sn, endereco, nome
+) VALUES(
+	'M', 55, '2018-12-01', '11 5555-2222', 645.22,
+    1, 'Avenida Paulista, 1500, ap315 - Sao Paulo - SP', 'João'
+);
