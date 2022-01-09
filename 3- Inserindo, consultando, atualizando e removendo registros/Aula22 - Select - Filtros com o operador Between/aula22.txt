@@ -1,0 +1,14 @@
+// Select - Filtros com o operador Between
+Obs: Podemos utilizar o operador Between apenas para testar valores numericos e também do tipo data.
+Lembrete: Este operador considera os valores do intervalo e também os próprios valores.
+
+WHERE                                              | WHERE 
+  - idade >= 18 AND idade <= 21;                   |   - idade BETWEEN 18 AND 21; 
+
+
+WHERE                                              | WHERE
+  - data >= '2018-12-01' AND data <= '2018-12-31'; |   - idade BETWEEN '2018-12-01' AND '2018-12-31';
+
+Ex:
+SELECT * FROM aluno WHERE idade BETWEEN 40 AND 60;
+SELECT * FROM aluno WHERE data_inscricao_curso BETWEEN '2018-11-01' AND '2018-11-30';
