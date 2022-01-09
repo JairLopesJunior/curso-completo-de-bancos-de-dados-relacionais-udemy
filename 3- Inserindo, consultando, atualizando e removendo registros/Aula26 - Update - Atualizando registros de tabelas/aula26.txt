@@ -1,0 +1,13 @@
+Update - Atualizando registros de tabelas
+
+SQL
+  - Conjunto DML (Data Manipulation Language)
+    INSERT, UPDATE, DELETE
+
+Obs: Por padrão o Workbench somente deixa apagar resgistros da tabela utilizando a PK, para alterar isto vá no Menu EDIT -> PREFERENCES -> SQL EDITOR -> E desmarque a opção
+'Safe Updates (rejects UPDATEs and DELETEs with no restrictions)', depois disto clique no Menu em QUERY -> RECONNECT TO SERVER.
+
+
+Ex:
+UPDATE aluno SET ativo_sn = 0 WHERE nome = 'Maria';
+UPDATE aluno SET ativo_sn = 1, valor_pago_curso = 750.00 WHERE nome = 'Maria';
