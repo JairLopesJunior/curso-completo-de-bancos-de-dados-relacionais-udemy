@@ -1,0 +1,5 @@
+// Select - Filtros com operadores Lógicos
+Ex:
+select * from aluno where sexo = 'M' and ativo_sn = 1;
+select * from aluno where sexo = 'M' and ativo_sn = 1 and valor_pago_curso < 625;
+select * from aluno where sexo = 'F' or idade >= 40;
