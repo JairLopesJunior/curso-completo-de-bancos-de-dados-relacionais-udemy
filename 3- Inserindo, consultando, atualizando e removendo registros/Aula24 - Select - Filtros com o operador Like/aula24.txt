@@ -1,0 +1,31 @@
+// Select - Filtros com o operador Like
+
+Permite realizar filtros com base em uma pesquisa de caracteres dentro de uma coluna textual.
+
+Caracteres curingas:
+  % Indica que pode haver a existencia de qualquer conjunto de caracter no texto.
+  _ Indica que pode haver a existência de um ou mais caracteres em uma posição especifica do texto.
+
+WHERE nome LIKE 'Maria';
+WHERE nome LIKE '%r%';
+WHERE nome LIKE 'm%';
+WHERE nome LIKE 'm%a';
+
+WHERE nome LIKE '_osé';
+WHERE nome LIKE '_oã_';
+WHERE nome LIKE '___é';
+
+WHERE nome LIKE '%d_';
+
+
+
+Ex:
+SELECT * from aluno WHERE nome LIKE 'Maria';        // Tráz todos os nomes iguais a 'Maria'.
+SELECT * from aluno WHERE nome LIKE '%o';           // Tráz todos os nomes que terminam com a letra 'o'.
+SELECT * from aluno WHERE nome LIKE '%m%';          // Tráz todos os nomes que tenham a letra 'm'.
+SELECT * from aluno WHERE nome LIKE 'm%';           // Tráz todos os nomes que começam com a letra 'm'.
+SELECT * from aluno WHERE nome LIKE 'm%a';          // Tráz todos os nomes que começam com a letra 'm' e terminam com a letra 'a'.
+SELECT * from aluno WHERE nome LIKE '_aria';        // Tráz todos os nomes que começa com qualquer caracter e terminam com as letras 'aria'.
+SELECT * from aluno WHERE nome LIKE '_ari_';        // Tráz todos os nomes que começam com qualquer caracter, no meio tenha as letras 'ari' e terminam com qualquer caracter.
+SELECT * from aluno WHERE nome LIKE '____a';        // Tráz todos os nomes que terminam com a letra 'a' e tenham o tamanho de cinco caracteres.
+SELECT * from aluno WHERE nome LIKE '%i_';          // Tráz todos os nomes que começe com qualquer caracter, tenha o caracter 'i' e termine com qualquer caracter desde queseja somente um.
