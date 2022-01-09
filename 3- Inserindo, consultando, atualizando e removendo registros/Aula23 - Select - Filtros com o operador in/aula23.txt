@@ -1,0 +1,13 @@
+// Select - Filtros com o operador In
+
+WHERE
+  nome = 'Fernanda' OR nome = 'José' OR nome = 'Marcelo';
+
+WHERE
+  interesse IN('Fernanda', 'José', 'Marcelo');
+
+Obs: Este operador aceita qualquer tipo de dado.
+
+Ex:
+SELECT * FROM aluno WHERE nome IN('João', 'Maria');
+SELECT * FROM aluno WHERE nome NOT IN('João');
