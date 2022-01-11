@@ -1,0 +1,26 @@
+// Descrevendo e alterando a estrutura de tabelas
+
+SQL
+  Conjunto DDL (Data Definition Language)
+    CREATE, DROP, ALTER
+
+
+Comando para ver a estrutura da tabela:
+desc nome_da_tabela;   (desc = Describe) É nativo do MySQL este comando.
+
+Comando para incluir campos na tabela:
+/* add inclusão */
+ALTER TABLE aluno ADD cpf VARCHAR(11);
+
+ALTER TABLE aluno ADD email VARCHAR(150) AFTER idade; // AFTERserve para falar que vai ser adicionado depois da coluna 'idade'
+
+
+Comando para alterar o tamanho do campo (Se o mesmo já foi criado):
+/* modify modificar */
+ALTER TABLE aluno MODIFY COLUMN cpf varchar(14);
+
+
+
+Comando para remover a coluna:
+/* drop remover */
+ALTER TABLE aluno DROP COLUMN cpf;
