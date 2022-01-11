@@ -1,0 +1,10 @@
+Delete - Deletando registros de tabelas
+
+SQL
+  Conjunto DML (Data Manipulation Language)
+    INSERT, UPDATE, DELETE
+
+Ex:
+DELETE FROM aluno WHERE ativo_sn = 0;
+DELETE FROM aluno WHERE idade IN(30, 29);
+
