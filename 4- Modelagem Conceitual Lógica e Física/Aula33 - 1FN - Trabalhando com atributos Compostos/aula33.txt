@@ -1,0 +1,34 @@
+Regras da 1FN
+
+- Toda tabela necessita de pelo menos uma coluna que identifica de forma única.
+  Primary Key (PK)
+
+- Todas as colunas de uma tabela devem ser atómicas.
+  Campos Multivalorado devem ser transformados em uma nova tabela.
+
+  Campos Compostos devem ser decompostos em colunas ou convertidos em outra tabela.
+
+
+
+A coluna 'endereco' é composta, por que contem varias informações independentes dentro da mesma. Neste caso para esta tabela ser considerada
+como 1FN precisamos ou criar colunas atomicas para cada informação, ou uma outra tabela.
+
+
+Campos adicionados:
+ALTER TABLE aluno ADD logradouro VARCHAR(100);
+ALTER TABLE aluno ADD numero VARCHAR(10);
+ALTER TABLE aluno ADD complemento VARCHAR(20);
+ALTER TABLE aluno ADD bairro VARCHAR(100);
+ALTER TABLE aluno ADD cidade VARCHAR(50);
+ALTER TABLE aluno ADD estado CHAR(2);
+
+UPDATE aluno
+SET logradouro = 'Avenida Paulista', 
+	numero = '1500',
+    complemento = 'ap315',
+    bairro = 'Bela Vista',
+    cidade = 'São Paulo',
+    estado = 'SP'
+WHERE idaluno = 1;
+
+ALTER TABLE aluno DROP endereco;
