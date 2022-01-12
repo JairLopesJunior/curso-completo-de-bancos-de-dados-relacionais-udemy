@@ -1,0 +1,17 @@
+1FN - Trabalhando com chaves primárias simples
+
+- Uma chave primária é um atributo ou conjunto de atributos que identifica de forma única um registro em uma tabela.
+
+                   Chave natural (Ex: cpf)
+Primary Key   --->
+                   Chave artificial (É o mais comum, criar a PK)
+
+
+Comando para alterar uma coluna para ser uma Primary Key (PK):
+ALTER TABLE aluno MODIFY COLUMN cpf VARCHAR(14) PRIMARY KEY;
+
+
+Obs: Se for remover uma Primary Key (PK) da tabela precisa Dropar ela, modificar não vai dar certo.
+
+Comando vai criar uma Primary Key (PK) na tabela:
+ALTER TABLE aluno ADD idaluno INT PRIMARY KEY auto_increment;
