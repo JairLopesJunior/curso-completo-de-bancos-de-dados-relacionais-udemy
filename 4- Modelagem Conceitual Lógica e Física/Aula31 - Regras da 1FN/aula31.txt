@@ -1,0 +1,9 @@
+Regras da 1FN
+
+- Toda tabela necessita de pelo menos uma coluna que identifica de forma única.
+  Primary Key (PK)
+
+- Todas as colunas de uma tabela devem ser atómicas.
+  Campos Multivalorado devem ser transformados em uma nova tabela.
+
+  Campos Compostos devem ser decompostos em colunas ou convertidos em outra tabela.
