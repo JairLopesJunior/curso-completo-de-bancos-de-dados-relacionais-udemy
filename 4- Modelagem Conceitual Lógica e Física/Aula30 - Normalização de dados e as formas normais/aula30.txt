@@ -1,0 +1,15 @@
+Normalização de dados e as formas normais
+
+O que é normalização?
+
+As formas normais:
+
+1º Regras da 1FN
+2º Regras da 2FN
+3º Regras da 3FN
+4º Regras da Boyce-Codd
+5º Regras da 4FN
+6º Regras da 5FN
+
+As tabelas precisam ser submetida de forma progressiva, ou seja, uma tabela para ser considerada a 2FN por exemplo precisa ter todas
+as regras da 1FN.
