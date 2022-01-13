@@ -1,0 +1,21 @@
+Cardinalidade 1:n - Modelagem Física
+
+Comandos utilizados:
+
+ALTER TABLE telefone ADD COLUMN fk_idaluno int;
+
+ALTER TABLE telefone ADD CONSTRAINT fk_aluno_telefone
+FOREIGN KEY(fk_idaluno) REFERENCES aluno(idaluno);
+
+
+Obs: Também é possível definir a Foreign Key (FK) quando estamos criando o a tabela, o mais comum é criar depois que criar a tabela 
+por que podemos definir o nome da CONSTRAINT que tem impacto quando falamos de dicionários de dados.
+
+Ex:
+CREATE TABLE telefone (
+	idtelefone INT AUTO_INCREMENT PRIMARY KEY,
+    numero VARCHAR(20),
+    tipo CHAR(3),
+    fk_idaluno INT,
+    FOREIGN KEY (fk_idaluno) REFERENCES aluno(idaluno)
+);
