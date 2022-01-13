@@ -1,0 +1,18 @@
+1FN - Trabalhando com atributos Multivalorados
+
+Campos Multivalorados devem ser transformados em uma nova tabela.
+
+Com isto a nossa tabela passa a atender todas as regras da 1FN e é considerada uma tabela normalizada.
+
+Comandos utilizados:
+
+CREATE TABLE telefone(
+	idtelefone INT auto_increment PRIMARY KEY,
+    numero VARCHAR(20),
+    tipo CHAR(3)
+);
+
+INSERT INTO telefone(numero, tipo) VALUES ('11 5555-2222', 'res');
+INSERT INTO telefone(numero, tipo) VALUES ('11 3333-4444', 'com');
+
+ALTER TABLE aluno DROP COLUMN telefone;
