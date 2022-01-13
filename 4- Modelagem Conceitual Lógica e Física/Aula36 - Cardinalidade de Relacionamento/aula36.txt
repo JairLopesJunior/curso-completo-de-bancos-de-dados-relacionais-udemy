@@ -1,0 +1,13 @@
+Cardinalidade de Relacionamentos 1:n
+
+ALUNO                                              TELEFONE
+--------      '1' aluno possui 'n' telefones       -------- 
+|      | ----->                            <-----  |      |
+|      |                                           |      |
+-------- 1, 1                                 0, n --------
+         ^                                    ^
+         |                                    |
+obrigatório                                não obrigatório
+
+Os numeros da esquerda representam se é obrigatório ou não.
+Os numeros da direita representam a Cardinalidade do Relacionamento. 
