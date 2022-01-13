@@ -1,0 +1,6 @@
+Cardinalidade 1:n - Inserindo registros relacionados.
+
+Comando utilizado para gravar um telefone de um aluno, interando nas duas tabelas.
+
+INSERT INTO telefone (numero, tipo, fk_idaluno)
+VALUES ('11 9564-5421', 'com', 2);
