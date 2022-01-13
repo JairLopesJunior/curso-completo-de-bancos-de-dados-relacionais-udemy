@@ -1,0 +1,13 @@
+Cardinalidade de Relacionamentos 1:1
+
+ALUNO                                              ENDEREÇO
+--------      '1' aluno possui '1' endereço        -------- 
+|      | ----->                            <-----  |      |
+|      |                                           |      |
+-------- 1, 1                                 1, 1 --------
+         ^                                    ^
+         |                                    |
+obrigatório                              obrigatório
+
+Os numeros da esquerda representam se é obrigatório ou não.
+Os numeros da direita representam a Cardinalidade do Relacionamento.
