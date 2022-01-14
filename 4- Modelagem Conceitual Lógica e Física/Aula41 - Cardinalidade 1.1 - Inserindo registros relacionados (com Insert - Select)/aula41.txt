@@ -1,0 +1,14 @@
+Cardinalidade 1:1 - Inserindo registros relacionados (com Insert/Select).
+
+Comando utilizado:
+
+INSERT INTO endereco(logradouro, numero, complemento, bairro, cidade, estado, fk_idaluno)
+SELECT logradouro, numero, complemento, bairro, cidade, estado, idaluno FROM aluno;
+
+
+ALTER TABLE aluno DROP COLUMN logradouro;
+ALTER TABLE aluno DROP COLUMN numero;
+ALTER TABLE aluno DROP COLUMN complemento;
+ALTER TABLE aluno DROP COLUMN bairro;
+ALTER TABLE aluno DROP COLUMN cidade;
+ALTER TABLE aluno DROP COLUMN estado;
