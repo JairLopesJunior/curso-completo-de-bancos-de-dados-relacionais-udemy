@@ -1,0 +1,16 @@
+Cardinalidade n:n - Modelagem Física
+
+Comandos utilizados:
+
+CREATE TABLE aluno_curso (
+    id_alunocurso INT AUTO_INCREMENT PRIMARY KEY,
+    fk_idaluno int,
+    fk_idcurso int
+);
+
+
+ALTER TABLE aluno_curso ADD CONSTRAINT fk_aluno_curso
+FOREIGN KEY(fk_idaluno) REFERENCES aluno(idaluno);
+
+ALTER TABLE aluno_curso ADD CONSTRAINT fk_curso_aluno
+FOREIGN KEY(fk_idcurso) REFERENCES curso(idcurso);
