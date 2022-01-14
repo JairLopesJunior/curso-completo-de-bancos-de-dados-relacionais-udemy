@@ -1,0 +1,11 @@
+Tipo de dado ENUM.
+
+Permite definir um conjunto fixo de dados possíveis para serem utilizados como valor de um registro em uma coluna.
+Permite a inclusão de apenas um único dado dentre as opções possíveis.
+
+Obs: Se tentar cadastrar um valor diferente do ENUM, vai ocorrer um erro.
+
+
+Comandos utilizados:
+
+ALTER TABLE telefone MODIFY COLUMN tipo ENUM('res', 'com', 'cel');
