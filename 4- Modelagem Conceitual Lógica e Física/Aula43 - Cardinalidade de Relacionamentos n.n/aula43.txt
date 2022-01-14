@@ -1,0 +1,12 @@
+Cardinalidade de Relacionamento n:n
+
+ ALUNO    '1' aluno possui 'n' cursos    ALUNO_CURSO    '1' curso possui 'n' alunos    CURSO
+--------   ^                      ^       --------       ^                       ^    --------
+|      | __|                      |______ |      | ______|                       |___ |      |
+|      |                                  |      |                                    |      |
+-------- 1, 1                        1, n -------- 1, n                          1, 1 --------
+
+Os numeros da esquerda representam se é obrigatório ou não.
+Os numeros da direita representam a Cardinalidade do Relacionamento.
+
+Obs: Neste relacionamento é criado uma tabela auxiliar recebndo a Primary Key (PK) das outras duas tabelas.
