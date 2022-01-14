@@ -1,0 +1,23 @@
+Aumentando a complexidade do projeto.
+
+
+Comandos utilizados:
+
+CREATE TABLE CURSO (
+    idcurso int auto_increment PRIMARY KEY,
+    descricao varchar(50)
+);
+
+
+
+INSERT INTO curso(descricao)
+VALUES ('Curso de Java');
+
+INSERT INTO curso(descricao)
+VALUES ('Curso de NodeJS');
+
+INSERT INTO curso(descricao)
+VALUES ('Curso de Android');
+
+INSERT INTO curso(descricao)
+VALUES ('Curso de PHP');
