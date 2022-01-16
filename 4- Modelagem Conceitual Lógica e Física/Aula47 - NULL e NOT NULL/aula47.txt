@@ -1,0 +1,17 @@
+NULL e NOT NULL
+
+NULL: Indica que as colunas podem aceitar valores nulos (padrão).
+NOT NULL: Restrição que impede a atribuição de valores nulos a colunas.
+
+
+
+
+Comandos utilizados:
+
+SELECT * FROM telefone WHERE numero IS NULL;
+
+ALTER TABLE telefone MODIFY COLUMN numero VARCHAR(20) NOT NULL;
+
+ALTER TABLE telefone MODIFY COLUMN tipo ENUM('res', 'com', 'cel') NOT NULL;
+
+ALTER TABLE telefone MODIFY COLUMN fk_idaluno INT NOT NULL;
