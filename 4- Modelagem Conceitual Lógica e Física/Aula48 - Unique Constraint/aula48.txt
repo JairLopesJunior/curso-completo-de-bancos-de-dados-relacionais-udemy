@@ -1,0 +1,13 @@
+Unique Constraint
+
+Indica que os valores de uma determinada coluna devem ser únicos para todos os registros.
+
+
+Obs: podem ser criado colunas unicas quando a tabela for criada, porem o mais interessante é criar com ALTER TABLE.
+
+
+
+Comandos utilizados:
+
+ALTER TABLE aluno ADD CONSTRAINT uc_aluno_cpf UNIQUE(cpf);
+ALTER TABLE aluno ADD CONSTRAINT uc_aluno_email UNIQUE(email);
