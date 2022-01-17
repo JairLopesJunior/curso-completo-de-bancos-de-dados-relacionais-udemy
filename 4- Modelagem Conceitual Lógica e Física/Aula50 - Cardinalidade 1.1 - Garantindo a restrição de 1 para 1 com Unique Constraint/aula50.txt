@@ -1,0 +1,10 @@
+Cardinalidade 1:1 - Garantindo a restrição de 1 para 1 com Unique Constraint
+
+
+Obs: Com isso é garantido pelo SGBD que somente irá gravar uma Foreign Key (FK) se existir uma Primary Key (PK) na outra tabela e também
+ele somente irá deixar gravar 1 unica vez aquela FK.
+
+
+Comandos utilizados:
+
+ALTER TABLE endereco ADD CONSTRAINT uc_endereco_fkidaluno UNIQUE(fk_idaluno);
