@@ -1,0 +1,56 @@
+Select - Trabalhando com funções de agregação: Count, Max, Min, Avg e Sum
+
+Count - Projeta o total de registros da tabela.
+
+Max - Projeta o maior valor de todos os registros de uma tabela com base em uma coluna.
+
+Min - Projeta o menor valor de todos os registros de uma tabela com base em uma coluna.
+
+Avg - Projeta a média dos valores de todos os registros de uma tabela com base em uma coluna.
+
+Sum - Projeta a soma dos valores de todos os registros de uma tabela com base em uma coluna.
+
+
+
+
+Comandos utilizados:
+
+/* count */
+SELECT COUNT(*) FROM aluno;
+SELECT COUNT(nome) FROM aluno;
+SELECT COUNT(DISTINCT nome) FROM aluno;
+
+Obs: O comando 'count' não conta os registros null.
+
+
+
+/* max */
+SELECT MAX(idade) FROM aluno;
+SELECT MAX(nome) FROM aluno;
+
+/* min */
+SELECT MIN(idade) FROM aluno;
+SELECT MIN(nome) FROM aluno;
+
+Obs: Tanto o 'min' quanto o 'max' se procurar pela String irá trazer em relação a ordem alfabetica.
+
+
+
+/* avg */
+SELECT AVG(valor_pago_curso) FROM aluno;
+
+
+
+/* sum */
+SELECT  SUM(valor_pago_curso) FROM aluno; 
+
+
+
+
+Nada impede que sejam utilizadas juntas:
+
+SELECT MAX(valor_pago_curso),
+       MIN(valor_pago_curso),
+       AVG(valor_pago_curso),
+       SUM(valor_pago_curso)
+FROM aluno;
