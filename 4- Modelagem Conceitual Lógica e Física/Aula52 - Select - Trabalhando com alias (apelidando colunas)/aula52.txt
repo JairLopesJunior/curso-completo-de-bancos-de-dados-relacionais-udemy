@@ -1,0 +1,7 @@
+Select - Trabalhando com alias (Apelidando colunas)
+
+SELECT MAX(valor_pago_curso) as maior_valor,
+       MIN(valor_pago_curso) as menor_valor,
+       AVG(valor_pago_curso) as media,
+       SUM(valor_pago_curso) as soma
+FROM aluno;
