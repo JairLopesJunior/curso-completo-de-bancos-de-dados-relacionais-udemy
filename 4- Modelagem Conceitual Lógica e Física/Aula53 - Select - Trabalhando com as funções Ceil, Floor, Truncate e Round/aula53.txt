@@ -1,0 +1,30 @@
+Select - Trabalhando com as funções Ceil, Floor, Truncate e Round.
+
+Ceil - Retorna o menor valor inteiro maior ou igual ao valor em questão.
+
+Floor - Retorna o maior valor inteiro menor ou igual ao valor em questão.
+
+Truncate - Trunca a fração de valores numéricos.
+
+Round - Retorna o valor arredondado para cima ou para baixo dependendo da fração do valor.
+
+
+
+
+Comandos utilizados:
+
+SELECT 17.4 AS valor;
+
+/* ceil - Arredonda o valor para cima */
+SELECT CEIL(17.4) AS valor;
+
+/* floor - Arredonda o valor para baixo */
+SELECT FLOOR(17.99) AS valor;
+
+/* truncate - Trunca a fração */
+SELECT TRUNCATE(22.757, 1) AS valor;
+
+/* round - Arredondamento */
+SELECT ROUND(55.752, 2) AS valor;
+/* < 5 = para baixo */ 
+/* >= 5 = para cima */
