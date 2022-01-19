@@ -1,0 +1,38 @@
+Select - Agrupando registros (Group by)
+
+
+SELECT 
+  <coluna(s)> <-¬ 
+FROM            |
+  <tabela(s)>   |                       Utilizando em conjunto com funções
+WHERE           |                       de agregação (sum, max, min, count, e avg).
+  <filtro(s)>   | 
+GROUP BY        |
+  <coluna(s)> __|
+ORDER BY
+  <coluna(s)>
+
+
+Obs: O 'GROUP BY' é utilizado junto com as funções de agregação. É um bloco opcional, porem 
+quando utilizado deve sempre ser utilizado depois dos filtros.
+
+
+
+
+Comandos utilizados:
+
+SELECT nome, COUNT(*) as repeticao_nome_agrupamento FROM aluno GROUP BY nome;
+
+SELECT ativo_sn, COUNT(*) repeticao_ativo_sn_agrupamento FROM aluno GROUP BY ativo_sn;
+
+SELECT ativo_sn, nome, COUNT(*) AS repeticao_agrupamento
+FROM aluno
+GROUP BY ativo_sn, nome;
+
+SELECT ativo_sn, ROUND(AVG(valor_pago_curso), 2) as media_por_agrupamento
+FROM aluno
+GROUP BY ativo_sn;
+
+SELECT sexo, MAX(idade) as maior_idade, MIN(idade) menor_idade
+FROM aluno
+GROUP BY sexo; 
