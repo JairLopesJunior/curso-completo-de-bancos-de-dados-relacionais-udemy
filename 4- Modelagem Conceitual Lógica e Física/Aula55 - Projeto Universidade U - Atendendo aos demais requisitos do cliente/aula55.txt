@@ -1,0 +1,18 @@
+Projeto Universidade U - Atendendo aos demais requisitos do cliente
+
+
+
+Comandos utilizados:
+
+/* Estados com mais alunos - Alunos por estado */
+SELECT estado, COUNT(*) AS total
+FROM endereco
+GROUP BY estado
+ORDER BY total DESC;
+
+/* Cursos mais vendidos - Alunos por curso */
+SELECT fk_idcurso, COUNT(*) AS total
+FROM aluno_curso
+GROUP BY fk_idcurso;
+
+SELECT DISTINCT(fk_idcurso) FROM aluno_curso;
