@@ -1,0 +1,27 @@
+Criando a tabela de controle de gastos mensais
+
+
+Obs: Se por acaso tentar usar algum nome que seja reservada pelo SGBD, utilizar as clases `` para funcionar.
+
+
+
+
+
+Comandos utilizados:
+
+CREATE TABLE gasto (
+	idgasto INT PRIMARY KEY AUTO_INCREMENT,
+    ano INT NOT NULL,
+    tipo ENUM('previsto', 'realizado') NOT NULL,
+    jan FLOAT(10, 2),
+    fev FLOAT(10, 2),
+    mar FLOAT(10, 2),
+    abr FLOAT(10, 2),
+    mai FLOAT(10, 2),
+    jun FLOAT(10, 2),
+    jul FLOAT(10, 2),
+    ago FLOAT(10, 2),
+    `set` FLOAT(10, 2),
+    `out` FLOAT(10, 2),
+    nov FLOAT(10, 2)
+);
