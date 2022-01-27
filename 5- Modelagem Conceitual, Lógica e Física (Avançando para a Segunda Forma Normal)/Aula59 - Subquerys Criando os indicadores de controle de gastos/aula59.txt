@@ -1,0 +1,55 @@
+Subquerys - Criando os indicadores de controle de gastos mensais.
+
+Obs: 
+- A Subquery nada mais é que uma query dentro da outra.
+- A Subquery pode ser utilizado em qualquer local da consulta ou de atualização e remoção de um registro.
+- A query que fica dentro da outra query é chamada de 'Subquery' e a que possui uma query dentro é chamada de 'Outerquery'.
+
+
+
+Comandos utilizados:
+
+SELECT idgasto
+FROM gasto
+WHERE ano = 2019 AND tipo = 'realizado';
+
+SELECT idgasto
+FROM gasto
+WHERE ano = 2019 AND tipo = 'previsto';
+
+SELECT
+	(SELECT jan 
+	FROM gasto
+	WHERE idgasto = (SELECT idgasto
+	FROM gasto
+	WHERE ano = 2019 AND tipo = 'previsto')) -
+    
+	(SELECT jan 
+	FROM gasto
+	WHERE idgasto = (SELECT idgasto
+	FROM gasto
+	WHERE ano = 2019 AND tipo = 'realizado')) as resultado_jan,
+    
+    (SELECT fev 
+	FROM gasto
+	WHERE idgasto = (SELECT idgasto
+	FROM gasto
+	WHERE ano = 2019 AND tipo = 'previsto')) -
+    
+	(SELECT fev 
+	FROM gasto
+	WHERE idgasto = (SELECT idgasto
+	FROM gasto
+	WHERE ano = 2019 AND tipo = 'realizado')) as resultado_fev,
+    
+    (SELECT mar 
+	FROM gasto
+	WHERE idgasto = (SELECT idgasto
+	FROM gasto
+	WHERE ano = 2019 AND tipo = 'previsto')) -
+    
+	(SELECT mar 
+	FROM gasto
+	WHERE idgasto = (SELECT idgasto
+	FROM gasto
+	WHERE ano = 2019 AND tipo = 'realizado')) as resultado_mar;
