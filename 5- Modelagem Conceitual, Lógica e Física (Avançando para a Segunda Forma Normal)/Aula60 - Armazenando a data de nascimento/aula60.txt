@@ -1,0 +1,11 @@
+Armazenando a data de nascimento
+
+
+
+Comandos utilizados:
+
+ALTER TABLE aluno ADD COLUMN data_nascimento DATE;
+    
+UPDATE aluno SET data_nascimento = '1960-05-01' WHERE idAluno = 1;
+UPDATE aluno SET data_nascimento = '1980-06-12' WHERE idAluno = 2;
+UPDATE aluno SET data_nascimento = '1982-01-07' WHERE idAluno = 3;
