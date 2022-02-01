@@ -1,0 +1,60 @@
+Select - Trabalhando com funções de data.
+
+Curdate ou Current_date - Retorna a data atual;
+
+Now - Retorna dataa e hora atuais;
+
+Date_format - Formata a projeção da data;
+
+Extract - Extrai parte de uma determinada data;
+
+Date_add - Adiciona um intervalo de tempo a data;
+
+Datediff - Retorna o número de dias entre duas datas;
+
+Period_diff - Retorna o número de meses entre duas datas;
+
+Dayofyear - Retorna o dia do ano (Entre 1 e 366);
+
+
+
+Comandos utilizados:
+
+/* Recuperar a data atual */
+SELECT CURDATE();
+SELECT CURRENT_DATE();
+
+/* Recuperar a data e hora atuais */
+SELECT NOW();
+
+/* Formatando datas */
+SELECT date_format(CURDATE(), '%d/%m/%Y') AS data_formatada;
+/*
+%d - Dia do mês (De 01 até 31)
+%D - Dia do mês com sufixo em inglês
+%m - Mês (De 01 a 12)
+%M - Nome do mês em inglês
+%y - Ano (Dois dígitos)
+%Y - Ano (Quatro dígitos)
+*/
+    
+/* Extrair parte de data */
+SELECT EXTRACT(DAY FROM CURDATE()); 
+SELECT EXTRACT(MONTH FROM CURDATE()); 
+SELECT EXTRACT(YEAR FROM CURDATE()); 
+/* day, month ou year */
+    
+/* Adicionando intervalo de tempo as datas*/
+SELECT DATE_ADD('1990-12-10', INTERVAL 4 DAY);
+/* second, minute, hour, day, month e year */    
+
+/* Calculo de dias entre datas */
+SELECT '1990-12-05' AS data_nascimento, 
+CURDATE() AS data_atual, 
+DATEDIFF('1990-12-05', CURDATE()) AS diferenca_dias;
+
+/* Calculo de meses entre datas, somente recebe ano e mês */
+SELECT PERIOD_DIFF('199504', '199402') AS diferenca_meses;
+
+/* Dia do ano */
+SELECT DAYOFYEAR(CURDATE());
