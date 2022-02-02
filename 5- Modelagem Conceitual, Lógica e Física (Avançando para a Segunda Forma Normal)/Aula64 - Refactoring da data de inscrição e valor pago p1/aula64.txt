@@ -1,0 +1,7 @@
+Refactoring da data de inscrição no curso e valor pago - parte 1.
+
+
+Comandos utilizados:
+
+ALTER TABLE aluno_curso ADD COLUMN data_inscricao_curso DATE;
+ALTER TABLE aluno_curso ADD COLUMN valor_pago_curso FLOAT(10, 2);  
