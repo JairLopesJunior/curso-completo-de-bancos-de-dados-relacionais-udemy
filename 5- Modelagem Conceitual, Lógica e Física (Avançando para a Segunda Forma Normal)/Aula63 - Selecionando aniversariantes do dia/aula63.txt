@@ -1,0 +1,22 @@
+Selecionando aniversariantes do dia
+
+
+
+Comandos utilizados:
+
+SELECT 
+	idaluno,
+	nome,
+	data_nascimento,
+    EXTRACT(MONTH FROM data_nascimento) AS data_nascimento_mes,
+    EXTRACT(DAY FROM data_nascimento) AS data_nascimento_dia,
+    
+    CURDATE() AS data_atual,
+	EXTRACT(MONTH FROM CURDATE()) AS data_atual_mes,
+    EXTRACT(DAY FROM CURDATE()) AS data_atual_dia,
+    TIMESTAMPDIFF(YEAR, data_nascimento, CURDATE())
+FROM
+	aluno
+WHERE
+	EXTRACT(MONTH FROM data_nascimento) = EXTRACT(MONTH FROM CURDATE()) AND
+    EXTRACT(DAY FROM data_nascimento) = EXTRACT(DAY FROM CURDATE());
