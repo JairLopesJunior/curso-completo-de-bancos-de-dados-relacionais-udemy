@@ -1,0 +1,25 @@
+Refactoring da data de inscrição no curso e valor pago - parte 2.
+
+
+Comandos utilizados:
+
+SELECT
+	idaluno, data_inscricao_curso, valor_pago_curso
+FROM
+	aluno
+WHERE
+	idaluno = 1;
+
+UPDATE
+	aluno_curso
+SET
+	data_inscricao_curso = (SELECT data_inscricao_curso FROM aluno WHERE idaluno = 3),
+    valor_pago_curso = (SELECT valor_pago_curso FROM aluno WHERE idaluno = 3)
+WHERE
+	fk_idaluno = 3;
+    
+
+SELECT DISTINCT fk_idaluno FROM aluno_curso;
+    
+ALTER TABLE aluno DROP COLUMN data_inscricao_curso;
+ALTER TABLE aluno DROP COLUMN valor_pago_curso;

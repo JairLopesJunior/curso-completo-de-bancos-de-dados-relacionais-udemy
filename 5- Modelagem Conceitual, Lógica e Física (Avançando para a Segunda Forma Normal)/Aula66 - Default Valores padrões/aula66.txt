@@ -1,0 +1,22 @@
+Default - Valores Padrões.
+
+Constraint que permite adicionar um valor padrão para uma coluna caso a informação não esteja passada no insert.
+
+Otimiza as operações de insert quando uma determinada coluna de uma tabela geralmente recebe o mesmo valor.
+
+current_timestamp = É uma variavel constante do banco de dados que armazena a data atual.
+
+
+
+Comandos utilizados:
+
+ALTER TABLE aluno MODIFY COLUMN ativo_sn INT DEFAULT 1;
+
+INSERT INTO aluno(sexo, email, nome, cpf, data_nascimento)
+VALUES ('M', 'jorge@gmail.com', 'Jorge', '444.555.555-15', '1989-06-01');
+
+
+ALTER TABLE aluno_curso MODIFY COLUMN data_inscricao_curso DATETIME DEFAULT CURRENT_TIMESTAMP;
+
+INSERT INTO aluno_curso(fk_idaluno, fk_idcurso, valor_pago_curso)
+VALUES (3, 3, 720);
