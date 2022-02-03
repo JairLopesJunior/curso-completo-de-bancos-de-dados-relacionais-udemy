@@ -1,0 +1,15 @@
+Primary Key Simples e Primary Key Composta.
+
+          ____________ SIMPLES __________ 1 Coluna  
+	  |
+primary Key
+          |___________ COMPOSTA _________ 2 ou mais colunas
+
+
+
+Comandos utilizados:
+
+ALTER TABLE aluno_curso DROP COLUMN id_alunocurso;
+
+ALTER TABLE aluno_curso ADD CONSTRAINT
+pk_aluno_curso PRIMARY KEY (fk_idaluno, fk_idcurso, data_inscricao_curso);
