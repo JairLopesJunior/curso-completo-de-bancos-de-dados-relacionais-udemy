@@ -1,0 +1,24 @@
+Analisando as anomalias de inserção, atualização e remoção de registros.
+
+
+
+
+Comandos utilizados:
+
+/* Anomalias de inserção (Redundância de dados, dados inconsistentes) */
+INSERT INTO projeto_funcionario(
+	codigo_projeto, matricula_projeto, nome_projeto,
+    nome_funcionario, funcao_funcionario, horas_estimadas
+)VALUES(
+	2, 353, 'Economia de Papel',
+    'João', 'Analista Financeiro', 25
+);
+
+/* Anomalias de exclusão (Perder registros importantes) */
+DELETE FROM projeto_funcionario
+WHERE codigo_projeto = 3 AND matricula_projeto = 221;
+
+/* Anomalias na atualização (Informações inconsistentes) */
+UPDATE projeto_funcionario
+SET nome_projeto = 'Inscrição Online'
+WHERE codigo_projeto = 1 AND matricula_projeto = 110;
