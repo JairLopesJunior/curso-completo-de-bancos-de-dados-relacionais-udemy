@@ -13,3 +13,13 @@ Regras da 2FN.
 |
 |
 ---> Tabela normalizada na Segunda Forma Normal
+
+
+
+Obs: A 2FN é aplicado em tabelas que tenham chaves compostas.
+
+
+/* Os atributos/colunas não chaves */
+
+/* Quais são os atributos/colunas chaves */
+codigo_projeto, matricula_funcionario
