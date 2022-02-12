@@ -14,4 +14,4 @@ SQL
 // SELECT
 Ex: 
 - select * from aluno;               // Seleciona tudo.
-- select nome, telefone from aluno;  // Seleciona somente o nome e o aluno.
+- select nome, telefone from aluno;  // Seleciona somente o nome e o telefone.
