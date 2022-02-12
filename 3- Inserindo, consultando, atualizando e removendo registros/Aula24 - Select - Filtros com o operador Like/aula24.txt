@@ -28,4 +28,4 @@ SELECT * from aluno WHERE nome LIKE 'm%a';          // Tráz todos os nomes que 
 SELECT * from aluno WHERE nome LIKE '_aria';        // Tráz todos os nomes que começa com qualquer caracter e terminam com as letras 'aria'.
 SELECT * from aluno WHERE nome LIKE '_ari_';        // Tráz todos os nomes que começam com qualquer caracter, no meio tenha as letras 'ari' e terminam com qualquer caracter.
 SELECT * from aluno WHERE nome LIKE '____a';        // Tráz todos os nomes que terminam com a letra 'a' e tenham o tamanho de cinco caracteres.
-SELECT * from aluno WHERE nome LIKE '%i_';          // Tráz todos os nomes que começe com qualquer caracter, tenha o caracter 'i' e termine com qualquer caracter desde queseja somente um.
+SELECT * from aluno WHERE nome LIKE '%i_';          // Tráz todos os nomes que começe com qualquer caracter, tenha o caracter 'i' e termine com qualquer caracter desde que seja somente um.
