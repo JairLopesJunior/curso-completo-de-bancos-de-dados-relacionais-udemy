@@ -9,4 +9,4 @@ Cardinalidade de Relacionamento n:n
 Os numeros da esquerda representam se é obrigatório ou não.
 Os numeros da direita representam a Cardinalidade do Relacionamento.
 
-Obs: Neste relacionamento é criado uma tabela auxiliar recebndo a Primary Key (PK) das outras duas tabelas.
+Obs: Neste relacionamento é criado uma tabela auxiliar recebendo a Primary Key (PK) das outras duas tabelas.
