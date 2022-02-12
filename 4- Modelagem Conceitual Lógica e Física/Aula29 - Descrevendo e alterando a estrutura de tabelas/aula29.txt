@@ -12,7 +12,7 @@ Comando para incluir campos na tabela:
 /* add inclusão */
 ALTER TABLE aluno ADD cpf VARCHAR(11);
 
-ALTER TABLE aluno ADD email VARCHAR(150) AFTER idade; // AFTERserve para falar que vai ser adicionado depois da coluna 'idade'
+ALTER TABLE aluno ADD email VARCHAR(150) AFTER idade; // AFTER serve para falar que vai ser adicionado depois da coluna 'idade'
 
 
 Comando para alterar o tamanho do campo (Se o mesmo já foi criado):
