@@ -8,7 +8,7 @@ ALTER TABLE telefone ADD CONSTRAINT fk_aluno_telefone
 FOREIGN KEY(fk_idaluno) REFERENCES aluno(idaluno);
 
 
-Obs: Também é possível definir a Foreign Key (FK) quando estamos criando o a tabela, o mais comum é criar depois que criar a tabela 
+Obs: Também é possível definir a Foreign Key (FK) quando estamos criando a tabela, o mais comum é criar depois que criar a tabela 
 por que podemos definir o nome da CONSTRAINT que tem impacto quando falamos de dicionários de dados.
 
 Ex:
