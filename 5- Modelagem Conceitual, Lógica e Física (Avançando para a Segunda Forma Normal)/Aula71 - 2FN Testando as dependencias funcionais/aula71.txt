@@ -1,0 +1,10 @@
+2FN - Testando as dependências funcionais e corrigindo as anomalias.
+
+Obs: A 2FN é aplicada em tabelas com chave primaria compostas.
+
+Precisamos entender a relação entre as colunas não chaves com as colunas das chaves compostas.
+
+Ex: O campo 'nome_projeto' depende da chave composta 'codigo_projeto' mas não depende da chave composta 'matricula_funcionario', neste caso provavelmente teremos que separar em outras tabelas.
+
+Precisamos retirar as colunas que possuem dependências parciais e levar para a entidade especifica, se a coluna  for uma dependência de ambas chaves compostas ela permanecerá na tabela.
+

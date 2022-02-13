@@ -7,7 +7,7 @@ Com isto a nossa tabela passa a atender todas as regras da 1FN e é considerada 
 Comandos utilizados:
 
 CREATE TABLE telefone(
-	idtelefone INT auto_increment PRIMARY KEY,
+    idtelefone INT auto_increment PRIMARY KEY,
     numero VARCHAR(20),
     tipo CHAR(3)
 );
