@@ -1,1 +1,21 @@
 Refactoring da tabela projeto_funcionario parte 2
+
+
+
+
+Comandos utilizados:
+
+CREATE TABLE projeto_funcionario2(
+	fk_idcodigo INT,
+    fk_idmatricula INT,
+    horas_estimadas INT NOT NULL,
+    horas_realizadas INT,
+    CONSTRAINT pk_projeto_funcionario
+    PRIMARY KEY(fk_idcodigo, fk_idmatricula)
+);
+
+ALTER TABLE projeto_funcionario2 ADD CONSTRAINT
+FOREIGN KEY(fk_idcodigo) REFERENCES projeto(idcodigo);
+
+ALTER TABLE projeto_funcionario2 ADD CONSTRAINT
+FOREIGN KEY(fk_idmatricula) REFERENCES funcionario(idmatricula);
