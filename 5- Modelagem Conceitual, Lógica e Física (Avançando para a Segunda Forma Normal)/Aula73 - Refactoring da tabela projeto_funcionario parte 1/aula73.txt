@@ -1,0 +1,26 @@
+Refactoring da tabela "projeto_funcionario" parte 1
+
+Obs: A coluna 'nome_projeto' que antes estava na tabela das chaves compostas fazia sentido ter a parte '_projeto' em seu nome, porem depois que 
+a mesma foi passada para a tabela 'projeto' podemos alterar o nome da mesma para somente 'nome'.
+
+
+
+
+Comandos utilizados:
+
+CREATE TABLE projeto(
+	idcodigo INT AUTO_INCREMENT,
+    data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP,
+    nome VARCHAR(100) NOT NULL,
+	CONSTRAINT pk_projeto PRIMARY KEY(idcodigo)
+);
+DESC projeto;
+
+CREATE TABLE funcionario(
+	idmatricula INT AUTO_INCREMENT,
+    nome VARCHAR(50) NOT NULL,
+    funcao VARCHAR(50) NOT NULL,
+    telefone VARCHAR(20),
+    CONSTRAINT pk_funcionario PRIMARY KEY(idmatricula)
+);
+DESC funcionario;
