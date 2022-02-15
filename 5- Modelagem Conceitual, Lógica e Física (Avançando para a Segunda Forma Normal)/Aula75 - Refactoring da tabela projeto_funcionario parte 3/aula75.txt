@@ -1,0 +1,65 @@
+Refatoring da tabela projeto_funcionario parte 3
+
+
+
+
+Comandos utilizados:
+
+SELECT * FROM projeto_funcionario;
+
+INSERT INTO projeto_funcionario(
+	codigo_projeto, matricula_projeto, nome_projeto,
+    nome_funcionario, funcao_funcionario, horas_estimadas
+)VALUES(
+	2, 100, 'Economia de Papel',
+    'Bianca', 'Analista de Atendimento', 150
+);
+
+/* Query para migração dos registros de funcionários */
+INSERT INTO funcionario(idmatricula, nome, funcao, telefone)
+SELECT DISTINCT
+	matricula_projeto,
+    nome_funcionario,
+    funcao_funcionario,
+    telefone_funcionario
+FROM 
+	projeto_funcionario;
+    
+SELECT * FROM funcionario;
+
+/* Query para migração dos registros de projeto */
+INSERT INTO projeto(idcodigo, data_criacao, nome)
+SELECT DISTINCT
+	codigo_projeto,
+    data_criacao_projeto,
+    nome_projeto
+FROM 
+	projeto_funcionario;
+    
+SELECT * FROM projeto;
+        
+SELECT * FROM projeto_funcionario 
+WHERE codigo_projeto = 2 
+ORDER BY data_criacao_projeto ASC;
+
+UPDATE projeto_funcionario
+SET data_criacao_projeto = '2019-01-24 11:39:41'
+WHERE codigo_projeto = 2;
+
+/* Registros de relacionamento entre as tabelas */
+INSERT INTO projeto_funcionario2(
+	fk_idcodigo, fk_idmatricula, 
+	horas_estimadas, horas_realizadas)
+SELECT 
+	codigo_projeto, matricula_projeto, 
+    horas_estimadas, horas_realizadas
+FROM 
+	projeto_funcionario;
+    
+SELECT * FROM projeto_funcionario;
+
+/* Deletar uma tabela */
+DROP TABLE projeto_funcionario;
+
+/* Renomear uma tabela */
+RENAME TABLE projeto_funcionario2 TO projeto_funcionario;
