@@ -1,0 +1,58 @@
+Analisando as anomalias de inserção, atualização e remoção de registros.
+
+2FN - DependÊncia Funcional Total (PK composta).
+
+3FN - Dependência Transitiva.
+
+
+
+
+
+
+Comandos utilizados:
+
+SELECT * FROM disciplina;
+
+INSERT INTO disciplina(
+	descricao, carga_horaria, codigo_professor,
+    nome_professor, email_professor, fk_idcurso
+)VALUES(
+	'NodeJS', 7, 100,
+    'Jorge', 'jorge@teste.com.br', 1
+);
+
+INSERT INTO disciplina(
+	descricao, carga_horaria, codigo_professor,
+    nome_professor, email_professor, fk_idcurso
+)VALUES(
+	'Express', 2, 120,
+    'Pedro', 'pedro@teste.com.br', 1
+);
+
+INSERT INTO disciplina(
+	descricao, carga_horaria, codigo_professor,
+    nome_professor, email_professor, fk_idcurso
+)VALUES(
+	'MongoDB', 5, 130,
+    'Julia', 'julia@teste.com.br', 1
+);
+
+/* Anomalias de inserção (Redundância de dados, dados inconsistentes) */
+INSERT INTO disciplina(
+	descricao, carga_horaria, codigo_professor,
+    nome_professor, email_professor, fk_idcurso
+)VALUES(
+	'EJS', 3, 100,
+    'Jorge', 'jorge1010@teste.com.br', 1
+);
+
+
+/* Anomalias de exclusão (Perder registros importantes) */
+DELETE FROM disciplina WHERE codigo_professor = 120 AND descricao = 'Express';
+
+
+
+/* Anomalias de atualização (Informações inconsistentes, redundância no update) */
+UPDATE disciplina
+SET nome_professor = 'George'
+WHERE iddisciplina = 1;
