@@ -1,0 +1,22 @@
+Criando a tabela 'disciplina' Modelagem Conceitual, Lógica e Física.
+
+
+
+
+Comandos utilizados:
+
+CREATE TABLE disciplina (
+	iddisciplina INT AUTO_INCREMENT,
+	descricao VARCHAR(50) NOT NULL,
+    carga_horaria INT,
+    codigo_professor INT,
+    nome_professor VARCHAR(50),
+    email_professor VARCHAR(100),
+    fk_idcurso INT,
+    CONSTRAINT pk_iddisciplina PRIMARY KEY(iddisciplina)
+);
+
+DESC disciplina;
+
+ALTER TABLE disciplina ADD CONSTRAINT fk_curso_disciplina
+FOREIGN KEY(fk_idcurso) REFERENCES curso(idcurso);
