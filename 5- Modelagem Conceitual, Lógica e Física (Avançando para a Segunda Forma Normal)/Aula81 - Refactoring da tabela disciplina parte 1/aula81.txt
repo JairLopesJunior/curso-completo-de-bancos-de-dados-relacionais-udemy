@@ -1,0 +1,51 @@
+Refactoring da tabela disciplina parte 1
+
+
+
+
+
+Comandos utilizados:
+
+CREATE TABLE professor(
+	idprofessor INT AUTO_INCREMENT,
+    nome VARCHAR(50) NOT NULL,
+    email VARCHAR(100),
+    CONSTRAINT pk_professor PRIMARY KEY(idprofessor)
+);
+
+SELECT 
+	codigo_professor,
+    COUNT(*) AS repeticoes,
+    nome_professor,
+    email_professor
+FROM  
+	disciplina
+GROUP BY
+	codigo_professor;
+    
+UPDATE disciplina
+SET email_professor = 'jorge@teste.com.br'
+WHERE codigo_professor = 100;
+
+UPDATE disciplina
+SET nome_professor = 'George'
+WHERE codigo_professor = 100;
+
+INSERT INTO professor(
+	idprofessor, 
+    nome, 
+    email
+)
+SELECT DISTINCT
+	codigo_professor,
+    nome_professor,
+    email_professor
+FROM  
+	disciplina;
+    
+SELECT * FROM professor;
+
+ALTER TABLE disciplina DROP COLUMN nome_professor;
+ALTER TABLE disciplina DROP COLUMN email_professor;
+
+SELECT * FROM disciplina;

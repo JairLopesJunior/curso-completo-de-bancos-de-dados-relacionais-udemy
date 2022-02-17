@@ -1,1 +1,7 @@
 3FN - Testando as dependências transitivas e corrigindo as anomalias
+
+
+/*
+2FN - Testamos a dependência Funcional Total (Campos não chave -> PK compostas)
+3FN - Testamos a dependência Transitiva (Campos não chave -> Campos não chave)
+*/
