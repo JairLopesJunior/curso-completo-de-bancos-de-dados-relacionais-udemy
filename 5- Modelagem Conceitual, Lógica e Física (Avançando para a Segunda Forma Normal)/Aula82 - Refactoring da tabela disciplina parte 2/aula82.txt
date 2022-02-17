@@ -1,0 +1,16 @@
+Refactoring da tabela disciplina parte 2
+
+
+
+
+
+Comandos utilizados:
+
+ALTER TABLE disciplina RENAME COLUMN codigo_professor TO fk_idprofessor;
+
+SELECT * FROM disciplina;
+
+ALTER TABLE disciplina ADD CONSTRAINT fk_disciplina_professor
+FOREIGN KEY(fk_idprofessor) REFERENCES professor(idprofessor);
+
+DESC disciplina;
