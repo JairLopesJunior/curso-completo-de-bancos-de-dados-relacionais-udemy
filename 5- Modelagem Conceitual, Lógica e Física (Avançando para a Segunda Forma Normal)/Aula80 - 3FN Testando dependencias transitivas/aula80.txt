@@ -1,0 +1,1 @@
+3FN - Testando as dependências transitivas e corrigindo as anomalias
