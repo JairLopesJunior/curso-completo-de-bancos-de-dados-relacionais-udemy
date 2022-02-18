@@ -1,0 +1,16 @@
+Dicionário de dados - Introdução
+
+
+
+No dicionário de dados são armazenados os metadados, ou seja, os dados sobre os dados.
+
+MODELAGEM
+    |
+    |----> Levantamento, definição e registro dos dados em um
+           arquivo ou planilha para auxilio na modelagem
+           conceitual, lógica e física do banco de dados.
+
+SGBD
+  |
+  |------> Consulta dos metadados dos objetos do banco de dados.
+
