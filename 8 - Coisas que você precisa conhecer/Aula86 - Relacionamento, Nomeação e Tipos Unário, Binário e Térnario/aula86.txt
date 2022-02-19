@@ -1,0 +1,40 @@
+Relacionamentos: Nomeação e tipos Unário, Binário e Ternário.
+
+Binário: É quando uma tabela se relaciona com outra tabela.
+
+Ternário: É quando uma tabela se relaciona com outras duas tabelas.
+
+Unário: É quando uma tabela se relaciona com ela mesmo.
+
+
+
+
+
+Comandos utilizados:
+
+SELECT * FROM funcionario;
+
+ALTER TABLE funcionario ADD COLUMN fk_idmatricula_supervisor INT;
+
+ALTER TABLE funcionario ADD CONSTRAINT fk_funcionario_supervisor 
+FOREIGN KEY(fk_idmatricula_supervisor) REFERENCES funcionario(idmatricula);
+
+DESC funcionario;
+
+UPDATE funcionario
+SET fk_idmatricula_supervisor = 110
+WHERE idmatricula = 100;
+
+INSERT INTO funcionario(
+	nome, funcao
+)VALUES(
+	'Pedro', 'Gerente de TI'
+);
+
+UPDATE funcionario
+SET fk_idmatricula_supervisor = 354
+WHERE idmatricula = 127;
+
+UPDATE funcionario
+SET fk_idmatricula_supervisor = 110
+WHERE idmatricula IN(221, 353);
