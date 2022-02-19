@@ -1,0 +1,19 @@
+Dicionário de Dados - SGBD
+
+Modelagem Conceitual
+  Dicionário de Dados
+    Modelagem Lógica
+      Modelagem Física
+        Dicionário de Dados
+
+
+/*
+1) Descrever as tabelas do Banco;
+2) Descrever os atributos das tabelas;
+3) Descrever os relacionamentos entre as tabelas;
+*/
+
+SHOW TABLES;
+
+/* Este comando retorna as instruções DDL utilizada para criação de uma determinada tabela */
+SHOW CREATE TABLE aluno;
