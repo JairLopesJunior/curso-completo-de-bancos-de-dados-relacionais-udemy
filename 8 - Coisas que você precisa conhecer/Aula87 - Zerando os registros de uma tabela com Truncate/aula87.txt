@@ -1,0 +1,52 @@
+Zerando os registros de uma tabela com Truncate
+
+Nesta aula voce vai aprender a como remover todos os registros de uma determinada tabela, sem necessáriamente remover a estrutura desta tabela.
+
+-- DELETE
+-- DROP TABLE / CREATE TABLE
+-- TRUNCATE TABLE
+
+Obs: A diferença do 'TRUNCATE TABLE' para o 'DELETE' é que no caso do 'TRUNCATE TABLE' o AUTO_INCREMENT da PK também é resetado,
+se utilizar a estrução 'DELETE' e removermos 2 registros da tabela o proximo INSERT irá ficar com a PK numero 3.
+Obs: Quando uma tabela pssui uma PK que é enviada para outra tabela como FK (Chamada de Tabela Referência), esta tabela não pode ser truncada.
+
+
+
+
+Comandos utilizados:
+
+SELECT * FROM gasto;
+
+TRUNCATE TABLE gasto;
+
+-- truncando a tabela onde esta a FK
+SELECT * FROM telefone;
+TRUNCATE TABLE telefone;
+
+-- truncando a tabela referência
+SELECT * FROM aluno;
+TRUNCATE TABLE aluno;
+
+/* Desativando a Integridade Referêncial das FKs, desta forma poderemos truncar qualquer tabela */ 
+SET foreign_key_checks = 0;
+TRUNCATE TABLE aluno;
+
+/* Comando para manter a Integridade Referêncial */
+SET foreign_key_checks = 1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
