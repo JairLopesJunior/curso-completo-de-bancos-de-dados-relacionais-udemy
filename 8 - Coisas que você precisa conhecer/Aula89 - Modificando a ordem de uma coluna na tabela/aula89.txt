@@ -1,0 +1,28 @@
+Modificando a ordem de uma coluna na tabela
+
+
+
+
+Comandos utilizados:
+
+SELECT * FROM aluno;
+
+SHOW CREATE TABLE aluno;
+
+CREATE TABLE `aluno` (
+   `sexo` char(1) DEFAULT NULL,
+   `ativo_sn` int DEFAULT '1',
+   `nome` varchar(25) DEFAULT NULL,
+   `email` varchar(150) DEFAULT NULL,
+   `cpf` varchar(14) DEFAULT NULL,
+   `idaluno` int NOT NULL AUTO_INCREMENT,
+   `data_nascimento` date DEFAULT NULL,
+   PRIMARY KEY (`idaluno`),
+   UNIQUE KEY `uc_aluno_cpf` (`cpf`),
+   UNIQUE KEY `uc_aluno_email` (`email`)
+ );
+
+ALTER TABLE aluno MODIFY `idaluno` int NOT NULL AUTO_INCREMENT FIRST;
+
+-- after
+ALTER TABLE aluno MODIFY  `ativo_sn` int DEFAULT '1' AFTER cpf;
