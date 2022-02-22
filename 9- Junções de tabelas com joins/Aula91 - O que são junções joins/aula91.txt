@@ -1,0 +1,9 @@
+O que são junções (joins)?
+
+inner join = Junção Interna
+
+full outer join = Junção Externa Completa
+
+left join = Junção a Esquerda
+
+right join = Junção a Direita
