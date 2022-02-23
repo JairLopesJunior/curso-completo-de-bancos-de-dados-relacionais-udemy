@@ -1,0 +1,4 @@
+Preparando o Banco de Dados da Universidade U para os testes com Junções.
+
+
+
