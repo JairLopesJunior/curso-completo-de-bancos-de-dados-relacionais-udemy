@@ -1,0 +1,41 @@
+JOIN - Junção á esquerda (LEFT JOIN)
+
+
+
+aluno á esquerda          t1 - t2          telefone á direita
+                         LEFT JOIN
+
+
+
+Obs: No (LEFT JOIN) todos os registros da tabela a (ESQUERDA) são retornados e todos os registros da tabela a direita
+que tenham relacionamento com os registros da tabela a esquerda também seráo retornados.
+
+
+
+
+Comandos utilizados:
+
+SHOW TABLES;
+
+SELECT * FROM aluno;
+SELECT * FROM telefone;
+
+SELECT
+	*
+FROM
+	aluno LEFT JOIN telefone ON (aluno.idaluno = telefone.fk_idaluno)
+WHERE 
+	aluno.sexo = 'F';
+    
+SELECT * FROM curso;
+SELECT * FROM disciplina;
+SELECT * FROM professor;
+
+SELECT
+	*
+FROM
+	curso LEFT JOIN disciplina ON (curso.idcurso = disciplina.fk_idcurso)
+    LEFT JOIN professor ON (disciplina.fk_idprofessor = professor.idprofessor)
+WHERE 
+	curso.idcurso = 1;
+
