@@ -1,0 +1,31 @@
+Seleção, projeção, junções, apelidos e ambiguidades.
+
+
+seleção = É feita a partir do 'WHERE', seleção de um subconjunto.
+projeção = É feito a partir do 'SELECT'.
+junção = É feito a partir do 'FROM'.
+
+Obs: Pode adicionar apelidos aos campos e as tabelas.
+
+
+
+
+
+Comandos utilizados:
+
+/* seleção, projeção, junção e apelidos */
+/* ambiguidade (Quando tem campos com o mesmo nome) */
+
+SELECT /* projeção */
+	idcurso,
+    c.descricao AS curso,
+    iddisciplina,
+    d.descricao AS disciplina,
+    idprofessor,
+    nome AS professor,
+    now() AS data_atual
+FROM
+	curso AS c LEFT JOIN disciplina AS d ON (c.idcurso = d.fk_idcurso) /* junção */
+    LEFT JOIN professor AS p ON (d.fk_idprofessor = p.idprofessor)     /* junção */
+WHERE /* seleção de um subconjunto */
+	c.idcurso = 1;
