@@ -1,0 +1,30 @@
+JOIN - Junção á direita (RIGHT JOIN)
+
+
+
+curso á esquerda           t1    t2          disciplina á direita
+                          RIGHT JOIN
+
+Coluna que estabelece o relacionamento entre os registros de cursos e disciplinas
+
+
+
+
+
+Comandos utilizados:
+
+SELECT * FROM curso;
+SELECT  * FROM disciplina;
+
+SELECT
+	*
+FROM curso AS c LEFT JOIN disciplina d ON (c.idcurso = d.fk_idcurso);
+
+SELECT
+	*
+FROM curso AS c RIGHT JOIN disciplina d ON c.idcurso = d.fk_idcurso;
+
+SELECT
+	*
+FROM
+	telefone AS t RIGHT JOIN aluno AS a ON (t.fk_idaluno = a.idaluno);
