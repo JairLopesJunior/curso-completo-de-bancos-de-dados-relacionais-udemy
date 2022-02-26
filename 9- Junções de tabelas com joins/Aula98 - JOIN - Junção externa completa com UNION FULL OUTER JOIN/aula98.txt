@@ -1,0 +1,22 @@
+JOIN - Junção externa completa com UNION (FULL OUTER JOIN).
+
+
+FULL OUTER JOIN = Tem a capacidade de retornar todos os registros das tabelas envolvidas no 
+relacionamento e também os registros que se relacionam entre si.
+
+Obs: (FULL OUTER JOIN) não é nativamente suportado pelo MYSQL.
+
+
+
+
+Comandos utilizados:
+
+SELECT 
+	* 
+FROM 
+	disciplina AS d LEFT JOIN professor AS p ON (d.fk_idprofessor = p.idprofessor)
+UNION /* Faz a união entre os registros das consultas (DISTINCT) */
+SELECT 
+	* 
+FROM 
+	disciplina AS d RIGHT JOIN professor AS p ON (d.fk_idprofessor = p.idprofessor);
