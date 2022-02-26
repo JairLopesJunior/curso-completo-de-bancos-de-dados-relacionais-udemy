@@ -1,0 +1,19 @@
+O que são Stored Procedures?
+
+Procedimentos armazenados são pequenos programas armazenados no Banco de Dados que podem ser chamados a qualquer momento.
+
+
+As PROCEDURES representam Regras de Negócios armazenadas diretamente nos bancos de dados:
+
+DESVANTAGEM: Necessidade de reescrita dos procedimentos para migração do Banco de Dados.
+VANTAGEM: Por estarem armazenadas no Banco de Dados é mais fácil trocar as tecnologias da aplicação.
+
+
+
+
+CREATE PROCEDURE <proc_nome>(<parametros>)
+BEGIN
+  /* Bloco de código da procedure */
+END
+
+CALL <proc_nome>(<parametros>)
