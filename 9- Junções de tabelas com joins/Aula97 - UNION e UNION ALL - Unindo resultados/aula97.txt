@@ -1,0 +1,59 @@
+UNION e UNION ALL - Unindo resultados.
+
+
+Utilizado para unir os resultados de consultas diferentes.
+Mesmo número de colunas.
+As colunas devem estar na mesma ordem.
+As colunas devem ser do mesmo tipo (dependendo do banco de dados).
+
+SELECT <projeção> FROM <tabelas> WHERE <filtros>
+  UNION / UNION ALL
+SELECT <projeção> FROM <tabelas> WHERE <filtros>
+  UNION / UNION ALL
+SELECT <projeção> FROM <tabelas> WHERE <filtros>
+ORDER BY <colunas>
+
+
+
+
+Comandos utilizados:
+
+/*
+UNION - Faz um 'DISTINCT' evitando que registros duplicados sejam retornados nesta consulta.
+UNION ALL - Não faz 'DISTINCT'
+*/
+
+/* Mesmo número de colunas */
+SELECT 100, 500
+UNION ALL
+SELECT 100, 300
+UNION ALL
+SELECT 500, 700;
+
+/* Mesma Ordem */
+SELECT 100 AS c1, 200 AS c2, 'Abacaxi' AS c3
+UNION ALL
+SELECT 500, 'Uva', 700;
+
+/* UNION (DISTINCT) x UNION ALL */
+SELECT 'morango' AS c1
+UNION
+SELECT 'uva'
+UNION ALL
+SELECT 'morango'
+UNION ALL
+SELECT 'abacaxi';
+
+/* Enviar um e-mail para todos os alunos e professores */
+SELECT email, 'aluno' FROM aluno WHERE sexo = 'f'
+UNION /* DISTINCT */
+SELECT email, 'professor' FROM professor WHERE idprofessor IN(2, 4, 6, 8)
+ORDER BY email DESC;
+
+
+
+
+
+
+
+
