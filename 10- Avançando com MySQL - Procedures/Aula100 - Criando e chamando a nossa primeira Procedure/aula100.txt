@@ -1,0 +1,39 @@
+Criando e chamando a nossa primeira Procedure.
+
+
+DELIMITER = Como o ";" o BD reconhece que é o fim de um comando, a gente precisa alterador o delimitador para podermos utilizar o ";" em nossa procedure.
+
+
+
+
+Comandos utilizados:
+
+DELIMITER $$
+CREATE PROCEDURE proc_oi()
+BEGIN
+	SELECT 'Oi, você acabou de executar um procedimento que está armazenado no BD! Sempre que você precisar é só me chamar.' AS msg;
+END
+$$
+DELIMITER ;
+
+CALL proc_oi();
+
+/* Processos bem definidos que são executados repetidas vezes, utilizar (PROCEDURE) */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
