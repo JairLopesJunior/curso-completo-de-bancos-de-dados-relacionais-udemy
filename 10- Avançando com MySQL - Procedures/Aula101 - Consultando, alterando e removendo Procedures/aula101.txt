@@ -1,0 +1,26 @@
+Consultando, alterando e removendo Procedures.
+
+
+
+
+Comandos utilizados:
+
+/* Listar procedures do Banco de Dados */
+SHOW PROCEDURE STATUS WHERE Db = 'universidade_u';
+
+/* Mostrar o conteúdo da Procedure */
+SHOW CREATE PROCEDURE universidade_u.proc_oi;
+
+/* Alterar Procedure -> Remover a procedure e criar novamente */
+/* Alteração */
+DROP PROCEDURE universidade_u.proc_oi;
+
+DELIMITER $$
+CREATE PROCEDURE `proc_oi`()
+ BEGIN
+ 	SELECT 'Oi, eu fui modificada!' AS msg;
+ END
+ $$
+ DELIMITER ;
+ 
+ CALL proc_oi();
