@@ -1,0 +1,50 @@
+Definindo parâmetros de entrada.
+
+			       Indica entrada
+                                de parâmetro
+                              |               |
+                              |               |
+                              V               V
+CREATE PROCEDURE <proc_nome>(IN param1 TIPO, IN param2 TIPO)
+BEGIN                                   ^               ^
+  /* Bloco de código da procedure */    |               |
+                                        |____________ Indica o tipo
+                                                      de parâmetro
+END
+
+CALL <proc_nome>(param1, param2)
+
+
+
+
+
+
+
+Comandos utilizados:
+
+DELIMITER $$
+CREATE PROCEDURE proc_media_ponderada(
+	IN nome VARCHAR(100), 
+    IN p1 FLOAT(3, 1),
+	IN p2 FLOAT(3, 1),
+    IN p3 FLOAT(3, 1), 
+    IN p4 FLOAT(3, 1)
+)
+COMMENT 'Efetua o cálculo de média ponderada: ((p1*2)+(p2*2)+(p3*3)+(p4*3)) / 10'
+BEGIN
+
+	/* Nome do aluno, média ponderada */
+	select nome, 
+    ROUND( (((p1*2)+(p2*2)+(p3*3)+(p4*3)) / 10), 1) AS 'media_ponderada';
+
+END
+$$
+DELIMITER ;
+
+SHOW PROCEDURE STATUS WHERE Db = 'universidade_u';
+
+DROP PROCEDURE universidade_u.proc_media_ponderada;
+
+CALL proc_media_ponderada('Jorge', 8, 7, 5, 9);
+CALL proc_media_ponderada('João', 6, 7, 10, 8);
+CALL proc_media_ponderada('Maria', 6.5, 4.2, 9.9, 8.7);
