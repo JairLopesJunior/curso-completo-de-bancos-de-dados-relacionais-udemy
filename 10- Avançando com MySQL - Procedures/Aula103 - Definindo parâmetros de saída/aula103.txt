@@ -1,0 +1,48 @@
+Definindo parâmetros de saída.
+
+		       Indica entrada    Indica a saída
+                        de parâmetro      de parâmetro
+                              |               |
+                              |               |
+                              V               V
+CREATE PROCEDURE <proc_nome>(IN param1 TIPO, OUT param2 TIPO)
+BEGIN                                   ^               ^
+  /* Bloco de código da procedure */    |               |
+                                        |____________ Indica o tipo
+                                                      de parâmetro
+END
+
+CALL <proc_nome>(param1, @param2)
+
+SELECT @param2    <---- O parâmetro é passado para procedure que modifica o seu valor permitindo seu uso posterior.
+
+
+INTO = Ao utilizar este comando significa que o valor da select deve estar dentro da variavel fornecida, exemplos de uso.
+SELECT COUNT(*) INTO total_alunos FROM aluno;
+
+
+
+
+Comandos utilizados:
+
+/* O total de alunos e o total de professores */
+DELIMITER $$
+CREATE PROCEDURE proc_resumo(OUT total_professores INT, OUT total_alunos INT)
+COMMENT 'Resumo do total de alunos e professores'
+BEGIN
+
+	/* Total de professores */
+    SELECT COUNT(*) INTO total_professores FROM professor;
+    
+    /* Total de alunos */
+	SELECT COUNT(*) INTO total_alunos FROM aluno;
+
+END
+$$
+DELIMITER ;
+
+SHOW PROCEDURE STATUS WHERE Db = 'universidade_u';
+
+CALL proc_resumo(@x, @y);
+
+SELECT @x AS total_professores, @y AS total_alunos;
