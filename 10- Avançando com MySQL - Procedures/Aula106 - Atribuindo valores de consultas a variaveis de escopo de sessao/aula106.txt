@@ -1,0 +1,20 @@
+Atribuindo valores de consultas a variáveis de escopo de sessão
+
+
+Obs: As variáveis de sessão também podem receber consultas.
+
+
+
+Comandos utilizados:
+
+/* Declarar uma variável que contenha o CPF de um aluno */
+SET @cpf = '555.555.555-55';
+SELECT * FROM aluno;
+
+/* Descobrir o ID do aluno */
+SELECT idaluno FROM aluno WHERE cpf = @cpf;
+SET @idaluno = (SELECT idaluno FROM aluno WHERE cpf = @cpf);
+
+/* Recuperar os registros de telefones dos alunos */
+SELECT @idaluno;
+SELECT * FROM telefone WHERE idtelefone = @idaluno;

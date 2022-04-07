@@ -17,3 +17,18 @@ Clientes
 
 Os nomes das variáveis são precedidos por @.
 A instrução SET permite declarar variáveis e atribuir valores.
+
+
+
+
+
+Comandos utilizados:
+SET @x = 10;
+SET @y = 15;
+SET @nome = 'Jorge';
+SET @resultado = @x + @y;
+
+SELECT @x;
+SELECT @y;
+SELECT @nome;
+SELECT @resultado;
