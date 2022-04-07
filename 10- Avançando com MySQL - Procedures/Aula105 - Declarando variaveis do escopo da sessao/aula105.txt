@@ -1,0 +1,19 @@
+Declarando variáveis do escopo da sessão.
+
+
+
+Clientes                          
+---------			 -----------------
+|	| ------- Sessão 1 ----> |               |
+---------			 |               |
+				 |               |
+---------                        |	         |       
+|	| ------- Sessão 2 ----> |     SGBD      |
+---------                        |               |
+                                 |               |
+---------                        |	         |    
+|	| ------- Sessão 3 ----> |               |
+---------                        -----------------
+
+Os nomes das variáveis são precedidos por @.
+A instrução SET permite declarar variáveis e atribuir valores.
