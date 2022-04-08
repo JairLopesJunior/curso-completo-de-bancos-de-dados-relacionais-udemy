@@ -1,0 +1,38 @@
+Atribuindo valores de consultas a variáveis de escopo local.
+
+
+
+
+
+
+Comandos utilizados:
+
+DELIMITER $$
+CREATE PROCEDURE proc_variaveis_escopo_local2()
+BEGIN
+	DECLARE total_professores INT;
+    
+    SET total_professores = (SELECT COUNT(*) FROM professor);
+    SELECT total_professores AS teste;
+END $$
+DELIMITER ;
+
+SHOW PROCEDURE STATUS WHERE Db = 'universidade_u';
+DROP PROCEDURE universidade_u.proc_variaveis_escopo_local2;
+
+CALL proc_variaveis_escopo_local2;
+
+DELIMITER $$
+CREATE PROCEDURE proc_variaveis_escopo_local3()
+BEGIN
+	DECLARE total_professores INT;
+    
+    SELECT COUNT(*) INTO total_professores FROM professor;
+    SELECT total_professores AS teste;
+END $$
+DELIMITER ;
+
+SHOW PROCEDURE STATUS WHERE Db = 'universidade_u';
+DROP PROCEDURE universidade_u.proc_variaveis_escopo_local3;
+
+CALL proc_variaveis_escopo_local3;
