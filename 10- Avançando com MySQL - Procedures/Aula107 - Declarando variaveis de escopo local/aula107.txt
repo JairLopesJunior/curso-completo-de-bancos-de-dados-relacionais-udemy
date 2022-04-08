@@ -1,0 +1,52 @@
+Declarando variávies de escopo local
+
+
+CREATE PROCEDURE <proc_nome>(<parametros>)
+BEGIN
+  /* ESCOPO LOCAL */
+END
+
+
+
+CREATE PROCEDURE <proc_nome>(<parametros>)
+BEGIN
+  /* ESCOPO LOCAL */
+END
+
+
+
+
+- A declaração das variáveis devem ser feitas através da instrução DECLARE.
+- As variáveis declaradas no escopo local não são precedidas pelo caracter @.
+- Após a declaração da variável é necessário informar o tipo de dado suportado pela mesma.
+- A atribuição de um valor inicial para a variável de escopo é feita através da instrução DEFAULT.
+
+
+
+
+
+
+
+Comandos utilizados:
+
+/* Tipagem fraca (Variavel de Escopo de Sessão) */
+SET @nome = 'Jorge';
+SET @nome = 10;
+SELECT @nome;
+
+DELIMITER $$
+CREATE PROCEDURE proc_variaveis_escopo_local1()
+BEGIN
+	/* Tipagem forte (Variavel de Escopo Local) */
+	DECLARE x INT DEFAULT 10;
+    DECLARE papagaio float(8, 2);
+    
+    /* Lógica Procedure */
+    SET papagaio = 20.45;
+    
+    SELECT x, papagaio AS variavel_escopo_local;
+END $$
+DELIMITER ;
+
+DROP PROCEDURE proc_variaveis_escopo_local1;
+CALL proc_variaveis_escopo_local1;
