@@ -1,0 +1,35 @@
+Declarando variáveis do escopo de parâmetros
+
+CREATE PROCEDURE <proc_nome>(<parametros>)
+BEGIN                             ^
+  /* ESCOPO LOCAL */              |________ ESCOPO DE
+END                                         PARÂMETROS
+
+
+- A declaração das variáveis devem ser feitas através da instrução IN / OUT ou INOUT.
+- As variáveis declaradas no escopo de parâmetros não são precedidas pelo caracter @.
+- Após a declaração da variável é necessário informar o tipo de dado suportado pela mesma.
+
+
+
+Obs: Se caso for emitido o tipo do parametro (Se é entrada ou saída) o 'DEFAULT' é o 'IN' (A entrada).
+
+
+
+
+
+Comandos utilizados:
+
+DELIMITER $$
+CREATE PROCEDURE proc_variaveis_escopo_parametro(param1 INT, OUT param2 VARCHAR(100))
+BEGIN
+	SELECT param1, param2;
+    SET param2 = 'Parâmetro 2 foi modificado e exportado pela procedure';
+END $$
+DELIMITER ;
+
+SHOW PROCEDURE STATUS WHERE db = 'universidade_u';
+SET @param2 = 'Parâmetro 2';
+SELECT @param2;
+CALL proc_variaveis_escopo_parametro(100, @param2);
+SELECT @param2;
