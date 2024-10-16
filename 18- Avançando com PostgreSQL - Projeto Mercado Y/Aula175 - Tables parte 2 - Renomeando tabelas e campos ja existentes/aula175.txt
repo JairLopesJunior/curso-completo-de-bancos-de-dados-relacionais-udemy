@@ -1,0 +1,4 @@
+Tables parte 2 - Renomeando tabelas e campos já existentes (DDL)
+
+ALTER TABLE <nome_tabela> RENAME TO <novo_nome_tabela>
+ALTER TABLE <nome_tabela> RENAME COLUMN <nome_coluna> TO <novo_nome_coluna>
