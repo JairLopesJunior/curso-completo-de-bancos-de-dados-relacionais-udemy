@@ -1,0 +1,43 @@
+Listando, criando, atualizando e removendo Esquemas (Schemas)
+
+O que são Esquemas (Schemas)?
+R: São espaços lógicos também conhecidos como namespaces, ficam dentro de um determinado Banco de Dados, com o objeto de 
+isolar objetos.
+
+Banco de Dados mercado_y
+
+Esquema Produto = tabelas, triggers, functions, procedures, views, etc...
+Esquema Auditoria = tabelas, triggers, functions, procedures, views, etc...
+Esquema Estoque = tabelas, triggers, functions, procedures, views, etc...
+Esquema Venda = tabelas, triggers, functions, procedures, views, etc...
+
+Por que separar em esquemas?
+R: Se for isolado em esquemas pode-se segmentar o acesso de usuários ou grupos de usuários por esquema.
+
+Usuário João tem acesso ao Schema Produto
+Usuário José tem acesso ao Schema Venda
+Grupo Almoxarifado tem acesso ao Schema Estoque
+
+
+Comando para Listar os schemas do BD:
+select schema_name from information_schema.schemata;
+select nspname from pg_catalog.pg_namespace;
+
+
+
+Criando Schema:
+create schema produto;
+
+
+
+
+Atualizar o nome do Schema:
+alter schema produto rename to produto_abcd;
+
+
+
+
+
+
+Para remover um Schema:
+drop schema produto_abcd;
