@@ -1,0 +1,4 @@
+Incluindo e removendo colunas em uma tabela já existente
+
+ALTER TABLE <nome_tabela> ADD COLUMN <nova_coluna> <tipo_de_dado>
+ALTER TABLE <nome_tabela> DROP COLUMN <nome_coluna>
