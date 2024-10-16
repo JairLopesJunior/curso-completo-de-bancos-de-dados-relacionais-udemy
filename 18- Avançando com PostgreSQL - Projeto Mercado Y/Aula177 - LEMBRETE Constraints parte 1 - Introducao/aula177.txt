@@ -1,0 +1,13 @@
+(LEMBRETE) Constraints parte 1 - Introdução
+
+O que são Constraints (restrições)?
+R: As constraints ou restrições são recursos comuns em qualquer banco de dados relacional
+possibilitam limitar os tipos de dados que poderam ser armazenados dentro de colunas nas tabelas.
+
+Principais Constraints:
+Not Null
+Enum
+Check
+Unique
+Primary Key
+Foreign Key
