@@ -1,0 +1,48 @@
+Tables parte 1 - Listando, criando e removendo tabelas
+
+/* Listar Bancos de Dados */
+select datname from pg_database;
+
+/* Listar schema/namespaces */
+select schema_name from information_schema.schemata where catalog_name = 'mercado_y';
+
+/* Listar tabelas */
+select * from information_schema.tables;
+select * from information_schema.tables where table_catalog = 'mercado_y' and table_schema = 'produto';
+
+/* Criar tabela (DDL - Data Definition Language) - Irá criar no schema default */
+create table tb_categoria(
+  id_categoria int,
+  categoria varchar(30)
+);
+
+/* Criar tabela (DDL - Data Definition Language) - Irá criar no schema que informou */
+create table produto.tb_categoria(
+  id_categoria int,
+  categoria varchar(30)
+);
+
+/* Remover tabelas */
+drop table tb_categoria;
+
+/* Listar as colunas de uma tabela */
+select * from information_schema.columns 
+where table_catalog = 'mercado_y' 
+and table_schema = 'produto' 
+and table_name = 'tb_categoria';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
