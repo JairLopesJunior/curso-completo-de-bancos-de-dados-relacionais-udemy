@@ -1,0 +1,8 @@
+Listando, criando e removendo banco de dados
+
+\list ou \l = Atalho para listar os Banco de Dados pela Linha de comando
+
+CREATE DATABASE mercado_y;
+DROP DATABASE mercado_y;
+
+select datname from pg_database; = Comando para ver os Banco de Dados
