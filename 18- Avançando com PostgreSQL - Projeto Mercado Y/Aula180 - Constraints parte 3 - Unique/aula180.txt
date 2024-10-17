@@ -1,0 +1,38 @@
+Constraints parte3 - Unique
+
+Check - Permite aplicar uma ou várias condições a uma coluna de uma tabela para
+permitir ou impedir a persistencia da informação passada para a mesma em uma operação
+de inser ou update.
+
+Unique (Aceita valor null) - Garante que o valor de uma coluna ou e um conjunto de colunas será único 
+entre todos os registros da tabela.
+
+Algumas formas de criar tanto junto com a tabela ou depois:
+
+CREATE TABLE produto.tb_fabricante (
+	id_fabricante int,
+	fabricante varchar(100) not null,
+	telefone varchar(17),
+	contato varchar(30),
+	email varchar(120) 
+	constraint uc_tb_fabricante_email unique
+);
+
+
+
+
+CREATE TABLE produto.tb_fabricante (
+	id_fabricante int,
+	fabricante varchar(100) not null,
+	telefone varchar(17),
+	contato varchar(30),
+	email varchar(120), 
+	constraint uc_tb_fabricante_email unique(email)
+);
+
+
+
+
+ALTER TABLE produto.tb_fabricante
+ADD COLUMN email varchar(120) 
+constraint uc_tb_fabricante_email unique;
