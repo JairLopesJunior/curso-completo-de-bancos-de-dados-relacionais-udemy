@@ -1,0 +1,30 @@
+Constraints parte 2 - Check
+
+Constraints:
+
+Check: Permite aplicar uma ou várias condições a uma coluna de uma tabela
+para permitir ou impedir a persistencia da informação passada para a mesma
+em uma operação de insert ou update.
+
+/* CRIANDO CONSTRAINTS NA HORA DE CRIAR A TABELA */
+CREATE TABLE produto.tb_produto (
+	id_produto int,
+	fk_id_categoria int,
+	fk_id_fabricante int,
+	produto varchar(50) not null,
+	unidade_medida char(3) not null,
+	preco_compra numeric(10,2) not null 
+	constraint chk_tb_produto_preco_compra check(preco_compra >= 0),
+	preco_venda numeric(10,2) not null 
+	constraint chk_tb_produto_preco_venda check(preco_venda >= 0),
+	constraint chk_tb_produto_preco_venda_2 
+	check(preco_venda > preco_compra)
+);
+
+
+
+
+/* ADICIONANDO UMA COLUNA COM TIPO E CONSTRAINT */
+alter table produto.tb_produto add column preco_compra numeric(10,2) 
+not null constraint chk_tb_produto_preco_compra 
+check(preco_compra >= 0);
