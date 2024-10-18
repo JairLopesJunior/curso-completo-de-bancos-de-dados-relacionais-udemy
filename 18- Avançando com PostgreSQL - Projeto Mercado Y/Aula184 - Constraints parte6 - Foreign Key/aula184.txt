@@ -1,0 +1,38 @@
+Constraints parte 6 - Foreign Key
+
+Foreign Key - Garante a integridade referêncial (relacionamento) entre registros de tabelas distintas.
+
+
+Podemos criar as FKs tanto no momento da criação das tabelas quanto logo após as tabelas com alter table (recomendado)
+
+CREATE TABLE produto.tb_categoria (
+    id_categoria serial primary key,
+    categoria varchar(30)
+);
+
+
+drop table produto.tb_produto;
+CREATE TABLE produto.tb_produto (
+    id_produto serial primary key,
+    fk_id_categoria int,
+    fk_id_fabricante int,
+    produto varchar(50) not null,
+    unidade_medida char(3) not null,
+    preco_compra  numeric(10,2) not null,
+    preco_venda numeric(10,2) not null
+);
+
+alter table produto.tb_produto add constraint
+fk_tb_produto_fk_id_categoria foreign key(fk_id_categoria)
+references produto.tb_categoria(id_categoria);
+
+alter table produto.tb_produto add constraint
+fk_tb_produto_fk_id_fabricante foreign key(fk_id_fabricante)
+references produto.tb_fabricante(id_fabricante);
+
+CREATE TABLE produto.tb_fabricante (
+    id_fabricante serial primary key,
+    fabricante varchar(100) not null,
+    telefone varchar(17),
+    contato varchar(30)
+);
