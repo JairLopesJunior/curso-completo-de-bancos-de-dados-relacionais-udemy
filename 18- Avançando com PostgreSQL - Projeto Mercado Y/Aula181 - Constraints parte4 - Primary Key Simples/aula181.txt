@@ -1,5 +1,14 @@
 Constraints parte4 - Primary Key Simples
 
+Check - Permite aplicar uma ou várias condições a uma coluna de uma tabela para
+permitir ou impedir a persistencia da informação passada para a mesma em uma operação
+de inser ou update.
+
+Unique (Aceita valor null) - Garante que o valor de uma coluna ou e um conjunto de colunas será único 
+entre todos os registros da tabela.
+
+Primary Key Simples - Garante uma identificação única para cada registro dentro de uma tabela com base em uma coluna.
+
 drop table produto.tb_categoria;
 drop table produto.tb_fabricante;
 drop table produto.tb_produto;
